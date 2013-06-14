@@ -4,39 +4,58 @@ describe "Static pages" do
 
   describe "Home page" do
 
-    it "should have the content 'Kindness Changes Everything'" do
+    it "should have the h1 'Kindness Changes Everything'" do
       visit '/static_pages/home'
-      page.should have_content('Kindness Changes Everything')
+      page.should have_selector('h1', :text => 'Kindness Changes Everything')
+    end
+
+    it "should have the title 'Kindness Changes Everything | Home'" do
+      visit '/static_pages/home'
+      page.should have_selector('title',
+                        :text => "Kindness Changes Everything | Home")
     end
   end
 
-  describe "Support page" do 
+  describe "Support page" do
 
-    it "should have the content 'Support'" do
+    it "should have the h1 'Support'" do
       visit '/static_pages/support'
-      page.should have_content('Support')
+      page.should have_selector('h1', :text => 'Support')
+    end
+
+    it "should have the title 'Kindness Changes Everything | Support'" do
+      visit '/static_pages/support'
+      page.should have_selector('title',
+                        :text => "Kindness Changes Everything | Support")
     end
   end
 
   describe "About page" do
 
-    it "should have the content 'About'" do
+    it "should have the h1 'About'" do
       visit '/static_pages/about'
-      page.should have_content('About')
+      page.should have_selector('h1', :text => 'About')
+    end
+
+    it "should have the title 'Kindness Changes Everything | About'" do
+      visit '/static_pages/about'
+      page.should have_selector('title',
+                        :text => "Kindness Changes Everything | About")
     end
   end
 
-  describe "Blog page" do 
+describe "Blog page" do
 
-    it "should have the content 'Blog'" do 
+    it "should have the h1 'Blog'" do
       visit '/static_pages/blog'
-      page.should have_content('Blog')
+      page.should have_selector('h1', :text => 'Blog')
     end
-  end
 
-  it "should have the right title" do 
-    visit '/static_pages/home'
-    page.should have_selector('title', :text => "Kindness Changes Everything")
+    it "should have the title 'Kindness Changes Everything | Blog'" do
+      visit '/static_pages/blog'
+      page.should have_selector('title',
+                        :text => "Kindness Changes Everything | Blog")
+    end
   end
 
 end
