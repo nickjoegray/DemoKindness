@@ -10,7 +10,7 @@ describe "Static pages" do
     end
 
     it "should have the base title" do
-      page.should have_selector('title', :text => "Kindness Changes Everything")
+      page.should have_selector('title', :text => full_title('')) 
     end
 
     it "should not have a custom page title" do
