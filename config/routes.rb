@@ -1,6 +1,8 @@
 KindnessChangesEverything::Application.routes.draw do
 
-  resources :posts
+  root :to => 'static_pages#home'
+
+  resources :posts, only: [:create]
 
   get "static_pages/home"
 

@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
+    @post = Post.create
   end
 
   def about

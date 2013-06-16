@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new params[:post]
+    @post = Post.new(params[:post])
     if @post.save
       flash[:success] = "You have spread kindness!"
       redirect_to [:root]
