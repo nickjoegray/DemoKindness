@@ -6,6 +6,5 @@ describe Post do
 
   it { should respond_to(:content) }
 
-  before { @post = Post.new(content: "Lorem ipsum")}
-
+  before { @post = Post.new(content: "Lorem ipsum") }
 end
